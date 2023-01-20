@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import { GitHubIcon, LinkedInIcon, TwitterIcon } from "../components/Icons";
 import { get } from "@vercel/edge-config";
+import { redirect } from "next/dist/server/api-utils";
 
 export const dynamic = "force-dynamic",
   runtime = "edge";
@@ -10,6 +11,23 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500"],
 });
+
+interface Data {
+  name: string;
+  avatar: string;
+  links: Link[];
+  socials: Social[];
+}
+
+interface Link {
+  href: string;
+  title: string;
+}
+
+interface Social {
+  href: string;
+  title: string;
+}
 
 function LinkCard({ href, title }: { href: string; title: string }) {
   return (
@@ -25,7 +43,8 @@ function LinkCard({ href, title }: { href: string; title: string }) {
 }
 
 export default async function HomePage() {
-  const data = await get("bionlinks");
+  const data: Data | undefined = await get("bionlinks");
+  if (!data) return () => redirect("https://linktr.ee/afx.aep");
 
   return (
     <div
@@ -41,11 +60,11 @@ export default async function HomePage() {
       <h1 className="font-extrabold mt-2 mb-8 text-xl text-white">
         {data.name}
       </h1>
-      {data.links.map((link: any) => (
+      {data.links.map((link) => (
         <LinkCard key={link.href} {...link} />
       ))}
       <div className="flex mt-12 gap-2">
-        {data.socials.map((social: any) => (
+        {data.socials.map((social) => (
           <a
             aria-label={`${social.title} link`}
             key={social.href}
