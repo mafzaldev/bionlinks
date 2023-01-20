@@ -16,7 +16,7 @@ function LinkCard({ href, title }: { href: string; title: string }) {
   return (
     <a
       href={href}
-      className="flex items-center justify-center p-3 mb-2 w-[450px] rounded-md bg-white hover:scale-105 transition-all"
+      className="flex items-center justify-center p-3 mb-2 rounded-md bg-white hover:scale-105 transition-all w-[350px] md:w-[550px]"
     >
       <h2 className="font-normal text-base text-ellipsis text-black">
         {title}
