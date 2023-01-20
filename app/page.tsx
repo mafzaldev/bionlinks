@@ -11,23 +11,6 @@ const inter = Inter({
   weight: ["300", "400", "500"],
 });
 
-interface Data {
-  name: string;
-  avatar: string;
-  links: Link[];
-  socials: Social[];
-}
-
-interface Link {
-  href: string;
-  title: string;
-}
-
-interface Social {
-  href: string;
-  title: string;
-}
-
 function LinkCard({ href, title }: { href: string; title: string }) {
   return (
     <a
@@ -42,7 +25,7 @@ function LinkCard({ href, title }: { href: string; title: string }) {
 }
 
 export default async function HomePage() {
-  const data: Data | undefined = await get("bionlinks");
+  const data = await get("bionlinks");
 
   return (
     <div
@@ -58,11 +41,11 @@ export default async function HomePage() {
       <h1 className="font-extrabold mt-2 mb-8 text-xl text-white">
         {data.name}
       </h1>
-      {data.links.map((link) => (
+      {data.links.map((link: any) => (
         <LinkCard key={link.href} {...link} />
       ))}
       <div className="flex mt-12 gap-2">
-        {data.socials.map((social) => (
+        {data.socials.map((social: any) => (
           <a
             aria-label={`${social.title} link`}
             key={social.href}
