@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import { GitHubIcon, LinkedInIcon, TwitterIcon } from "../components/Icons";
-import { get } from "@vercel/edge-config";
-import { redirect } from "next/navigation";
+
+import data from "../data.json";
 
 export const dynamic = "force-dynamic",
   runtime = "edge";
@@ -11,23 +11,6 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500"],
 });
-
-interface Data {
-  name: string;
-  avatar: string;
-  links: Link[];
-  socials: Social[];
-}
-
-interface Link {
-  href: string;
-  title: string;
-}
-
-interface Social {
-  href: string;
-  title: string;
-}
 
 function LinkCard({ href, title }: { href: string; title: string }) {
   return (
@@ -43,11 +26,6 @@ function LinkCard({ href, title }: { href: string; title: string }) {
 }
 
 export default async function HomePage() {
-  const data: Data | undefined = await get("bionlinks");
-  if (!data) {
-    redirect("https://linktr.ee/afx.aep");
-  }
-
   return (
     <div
       className={`flex flex-col items-center mt-10 w-full ${inter.className}`}

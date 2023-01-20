@@ -1,0 +1,32 @@
+{
+  "name": "@mafzaldev",
+  "avatar": "https://avatars.githubusercontent.com/u/78255759?v=4",
+  "links": [
+    {
+      "title": "ImageXChange",
+      "href": "https://imagexchange.netlify.app/"
+    },
+    {
+      "title": "KeyGenius",
+      "href": "https://keygenius.netlify.app/"
+    },
+    {
+      "title": "ShadeShift",
+      "href": "https://shadeshift.netlify.app/"
+    }
+  ],
+  "socials": [
+    {
+      "title": "GitHub",
+      "href": "https://github.com/mafzaldev"
+    },
+    {
+      "title": "Twitter",
+      "href": "https://twitter.com/mafzaldev"
+    },
+    {
+      "title": "LinkedIn",
+      "href": "https://linkedin.com/in/mafzaldev/"
+    }
+  ]
+}
