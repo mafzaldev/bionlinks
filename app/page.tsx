@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import { GitHubIcon, LinkedInIcon, TwitterIcon } from "../components/Icons";
 import { get } from "@vercel/edge-config";
-import { redirect } from "next/dist/server/api-utils";
+import { redirect } from "next/navigation";
 
 export const dynamic = "force-dynamic",
   runtime = "edge";
@@ -44,7 +44,9 @@ function LinkCard({ href, title }: { href: string; title: string }) {
 
 export default async function HomePage() {
   const data: Data | undefined = await get("bionlinks");
-  if (!data) return () => redirect("https://linktr.ee/afx.aep");
+  if (!data) {
+    redirect("https://linktr.ee/afx.aep");
+  }
 
   return (
     <div
