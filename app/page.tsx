@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Inter } from "@next/font/google";
-import { GitHubIcon, LinkedInIcon, TwitterIcon } from "../components/Icons";
 
 import data from "../data.json";
 
@@ -18,7 +17,7 @@ function LinkCard({ href, title }: { href: string; title: string }) {
       href={href}
       className="flex items-center justify-center p-3 mb-2 rounded-md bg-white hover:scale-105 transition-all w-[350px] md:w-[550px]"
     >
-      <h2 className="font-normal text-base text-ellipsis text-black">
+      <h2 className="font-normal text-base text-ellipsis text-gray-700">
         {title}
       </h2>
     </a>
@@ -43,7 +42,7 @@ export default async function HomePage() {
       {data.links.map((link) => (
         <LinkCard key={link.href} {...link} />
       ))}
-      <div className="flex mt-12 gap-2">
+      <div className="flex my-12 gap-3">
         {data.socials.map((social) => (
           <a
             aria-label={`${social.title} link`}
@@ -54,11 +53,11 @@ export default async function HomePage() {
             className="hover:scale-110 transition-all"
           >
             {social.href.includes("twitter") ? (
-              <TwitterIcon />
+              <img src={"/twitter.png"} alt={"TwitterIcon"} width="40px" />
             ) : social.href.includes("github") ? (
-              <GitHubIcon />
+              <img src={"/github.png"} alt={"TwitterIcon"} width="35px" />
             ) : social.href.includes("linkedin") ? (
-              <LinkedInIcon />
+              <img src={"/linkedin.png"} alt={"TwitterIcon"} width="38px" />
             ) : null}
           </a>
         ))}

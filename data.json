@@ -7,12 +7,45 @@
       "href": "https://imagexchange.netlify.app/"
     },
     {
+      "title": "Unsplash(Lite)",
+      "href": "https://shadeshift.netlify.app/"
+    },
+    {
       "title": "KeyGenius",
       "href": "https://keygenius.netlify.app/"
     },
     {
+      "title": "MessageMate (Chat app)",
+      "href": "https://messagemate.netlify.app/"
+    },
+    {
+      "title": "NFTPool Landing Page",
+      "href": "https://nftpool.netlify.app/"
+    },
+    {
       "title": "ShadeShift",
       "href": "https://shadeshift.netlify.app/"
+    },
+    {
+      "title": "TriviaTastic",
+      "href": "https://triviatastic.netlify.app/"
+    },
+    {
+      "title": "PriorityPro (with Local Storage)",
+      "href": "https://prioritypro.netlify.app/"
+    },
+
+    {
+      "title": "PositivityPro (with Lo-Fi music)",
+      "href": "https://positivitypro.netlify.app/"
+    },
+    {
+      "title": "Gag Generator",
+      "href": "https://gaggenerator.netlify.app/"
+    },
+    {
+      "title": "Movies Catalogue",
+      "href": "https://cinezilla.netlify.app/"
     }
   ],
   "socials": [
@@ -21,12 +54,12 @@
       "href": "https://github.com/mafzaldev"
     },
     {
-      "title": "Twitter",
-      "href": "https://twitter.com/mafzaldev"
-    },
-    {
       "title": "LinkedIn",
       "href": "https://linkedin.com/in/mafzaldev/"
+    },
+    {
+      "title": "Twitter",
+      "href": "https://twitter.com/mafzaldev"
     }
   ]
 }
