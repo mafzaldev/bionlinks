@@ -15,11 +15,10 @@ function LinkCard({ href, title }: { href: string; title: string }) {
   return (
     <a
       href={href}
-      className="flex items-center justify-center p-3 mb-2 rounded-md bg-white hover:scale-105 transition-all w-[350px] md:w-[550px]"
+      target="_blank"
+      className={`flex items-center justify-center p-3 mb-2 rounded-md bg-white hover:scale-105 transition-all w-[350px] md:w-[550px] ${inter.className}`}
     >
-      <h2 className="font-normal text-base text-ellipsis text-gray-700">
-        {title}
-      </h2>
+      <h2 className="font-bold text-base text-gray-800">{title}</h2>
     </a>
   );
 }
@@ -36,13 +35,13 @@ export default async function HomePage() {
         width={100}
         height={100}
       />
-      <h1 className="font-extrabold mt-2 mb-8 text-xl text-white">
+      <h1 className="font-black mt-3 mb-8 text-2xl text-white tracking-wide">
         {data.name}
       </h1>
       {data.links.map((link) => (
         <LinkCard key={link.href} {...link} />
       ))}
-      <div className="flex my-12 gap-3">
+      <div className="flex items-center my-12 gap-3">
         {data.socials.map((social) => (
           <a
             aria-label={`${social.title} link`}
@@ -53,11 +52,26 @@ export default async function HomePage() {
             className="hover:scale-110 transition-all"
           >
             {social.href.includes("twitter") ? (
-              <img src={"/twitter.png"} alt={"TwitterIcon"} width="40px" />
+              <img
+                src={"/twitter.svg"}
+                alt={"twitter"}
+                height="40px"
+                width="40px"
+              />
             ) : social.href.includes("github") ? (
-              <img src={"/github.png"} alt={"TwitterIcon"} width="35px" />
+              <img
+                src={"/github.svg"}
+                alt={"github"}
+                height="35px"
+                width="35px"
+              />
             ) : social.href.includes("linkedin") ? (
-              <img src={"/linkedin.png"} alt={"TwitterIcon"} width="38px" />
+              <img
+                src={"/linkedin.svg"}
+                alt={"linkedin"}
+                height="35px"
+                width="35px"
+              />
             ) : null}
           </a>
         ))}

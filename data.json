@@ -3,6 +3,10 @@
   "avatar": "https://avatars.githubusercontent.com/u/78255759?v=4",
   "links": [
     {
+      "title": "Swift Note",
+      "href": "https://swiftnote.netlify.app/"
+    },
+    {
       "title": "ImageXChange",
       "href": "https://imagexchange.netlify.app/"
     },
@@ -52,13 +56,14 @@
       "title": "GitHub",
       "href": "https://github.com/mafzaldev"
     },
-    {
-      "title": "LinkedIn",
-      "href": "https://linkedin.com/in/mafzaldev/"
-    },
+
     {
       "title": "Twitter",
       "href": "https://twitter.com/mafzaldev"
+    },
+    {
+      "title": "LinkedIn",
+      "href": "https://linkedin.com/in/mafzaldev/"
     }
   ]
 }
