@@ -5,3 +5,27 @@
 body {
   background: linear-gradient(to right, #2f0743, #41295a);
 }
+
+.cat-gif {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 70px;
+  transform: translateX(-100%);
+  animation: moveGif 30s linear infinite;
+}
+
+@keyframes moveGif {
+  0% {
+    transform: translateX(0vw);
+  }
+  49.9% {
+    transform: translateX(100vw);
+  }
+  50% {
+    transform: translateX(100vw) scaleX(-1);
+  }
+  100% {
+    transform: translateX(0vw) scaleX(-1);
+  }
+}

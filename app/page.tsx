@@ -76,6 +76,7 @@ export default async function HomePage() {
           </a>
         ))}
       </div>
+      <img src="/white_cat.gif" className="cat-gif" alt="Moving Cat" />
     </div>
   );
 }
