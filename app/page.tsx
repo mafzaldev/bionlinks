@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Inter } from "@next/font/google";
 
 import data from "../data.json";
@@ -13,13 +14,13 @@ const inter = Inter({
 
 function LinkCard({ href, title }: { href: string; title: string }) {
   return (
-    <a
+    <Link
       href={href}
       target="_blank"
       className={`flex items-center justify-center p-3 mb-2 rounded-md bg-white hover:scale-105 transition-all w-[350px] md:w-[550px] ${inter.className}`}
     >
       <h2 className="font-bold text-base text-gray-800">{title}</h2>
-    </a>
+    </Link>
   );
 }
 
@@ -35,47 +36,29 @@ export default async function HomePage() {
         width={100}
         height={100}
       />
-      <h1 className="font-black mt-3 mb-8 text-2xl text-white tracking-wide">
+      <h1 className="font-black mt-3 text-xl text-white tracking-wide">
         {data.name}
       </h1>
-      {data.links.map((link) => (
-        <LinkCard key={link.href} {...link} />
-      ))}
-      <div className="flex items-center my-12 gap-3">
+
+      <div className="flex items-center my-6 gap-3">
         {data.socials.map((social) => (
-          <a
+          <Link
             aria-label={`${social.title} link`}
             key={social.href}
             href={social.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:scale-110 transition-all"
+            className=" bg-white px-3 py-1 rounded-lg font-mono font-bold text-gray-800"
           >
-            {social.href.includes("twitter") ? (
-              <img
-                src={"/twitter.svg"}
-                alt={"twitter"}
-                height="40px"
-                width="40px"
-              />
-            ) : social.href.includes("github") ? (
-              <img
-                src={"/github.svg"}
-                alt={"github"}
-                height="35px"
-                width="35px"
-              />
-            ) : social.href.includes("linkedin") ? (
-              <img
-                src={"/linkedin.svg"}
-                alt={"linkedin"}
-                height="35px"
-                width="35px"
-              />
-            ) : null}
-          </a>
+            {social.title}
+          </Link>
         ))}
       </div>
+
+      {data.links.map((link) => (
+        <LinkCard key={link.href} {...link} />
+      ))}
+
       <img src="/white_cat.gif" className="cat-gif" alt="Moving Cat" />
     </div>
   );
